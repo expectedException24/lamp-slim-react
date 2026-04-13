@@ -13,6 +13,7 @@ $app->get('/test', function (Request $request, Response $response, array $args) 
     $response->getBody()->write("Test page");
     return $response;
 });
+
 $app->get('/alunni', "AlunniController:index");
 $app->get('/alunni/{id}', "AlunniController:show");
 $app->post('/alunni', "AlunniController:create");
@@ -23,7 +24,4 @@ $app->get('/hello/{name}', function (Request $request, Response $response, array
     $response->getBody()->write("Hello, $name");
     return $response;
 });
-
-$app->get('/alunni', "AlunniController:index");
-
 $app->run();
